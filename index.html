@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(https://images7.alphacoders.com/103/thumb-1920-1030536.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            background-color: rgba(244, 246, 247, 0.188);
+            padding: 10px;
+            border-radius: 25px;
+        }
+        h1{
+            font-size: clamp(10px,4vw,24px);
+        }
+        input{
+            padding: 10px;
+            width: 80%;
+            background-color: rgba(230, 239, 239, 0.512);
+            border: none;
+            border-radius: 25px;
+        }
+        button{
+            padding: 10px;
+        border-radius: 20px; 
+    border: none;    
+    box-shadow: 1px 5px 5px;   
+}
+button:hover{
+background-color: black;
+color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>check if the numer is palindrome</h1>
+    <input type="text" id = "cheker">
+    <h1 id="yup"></h1>
+    <button onclick="myfunc()">click to check</button>
+    </div>
+    <script>
+        function myfunc() {
+        let a = document.getElementById("cheker").value;
+           let  str = a.toString();
+           let reverse = str.split("").reverse().join("");
+           if (a === ""){
+            document.getElementById("yup").innerText = "give value first"
+            document.body.firstElementChild.style.backgroundColor = "red";
+           }
+           else if(reverse === str ){
+            document.getElementById("yup").innerText = "it is what it is ";
+            document.getElementById("yup").style.color = "blue";
+            document.body.firstElementChild.style.backgroundColor = "pink";
+        }else{
+            document.getElementById("yup").innerText = "no it is not"
+            document.getElementById("yup").style.color = "red";
+            document.body.firstElementChild.style.backgroundColor = "yellow";
+           }
+
+            
+        }
+
+    </script>
+</body>
+</html>
