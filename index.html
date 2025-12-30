@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,30 @@
     <style>
         body{
             margin: 0;padding: 0;
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+
             background-image: url(https://images7.alphacoders.com/103/thumb-1920-1030536.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
         }
         .container{
+            /* background-image: url(https://images7.alphacoders.com/103/thumb-1920-1030536.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; */
+            /* background:  linear-gradient(135deg, #0F172A, #1E293B); */
+            background-color: #0F172A;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
             display: flex;
             flex-direction: column;
             width: auto;
@@ -49,8 +64,49 @@ button:hover{
 background-color: black;
 color: white;
 }
+
+            background-color: rgba(15, 23, 42, 0.75);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border:  1px solid rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            font-size: clamp(10px, 4vw, 24px);
+            color: #E5E7EB;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            background-color: #1E293B;
+            border: none;
+            border-radius: 25px;
+            color: #E5E7EB;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.4);
+            background-color: #2563EB;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #1D4ED8;
+        }
+
+        #yup {
+            margin-top: 10px;
+            font-size: 16px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>check if the numer is palindrome</h1>
@@ -60,26 +116,28 @@ color: white;
     </div>
     <script>
         function myfunc() {
-        let a = document.getElementById("cheker").value;
-           let  str = a.toString();
-           let reverse = str.split("").reverse().join("");
-           if (a === ""){
-            document.getElementById("yup").innerText = "give value first"
-            document.body.firstElementChild.style.backgroundColor = "red";
-           }
-           else if(reverse === str ){
-            document.getElementById("yup").innerText = "it is what it is ";
-            document.getElementById("yup").style.color = "blue";
-            document.body.firstElementChild.style.backgroundColor = "pink";
-        }else{
-            document.getElementById("yup").innerText = "no it is not"
-            document.getElementById("yup").style.color = "red";
-            document.body.firstElementChild.style.backgroundColor = "yellow";
-           }
+            let a = document.getElementById("cheker").value;
+            let str = a.toString();
+            let reverse = str.split("").reverse().join("");
+            if (a === "") {
+                document.getElementById("yup").innerText = "Give value first ❗";
+                document.getElementById("yup").style.color = "#FACC15";
+                box.style.backgroundColor = "rgba(239,68,68,0.4)";
+            }
+            else if (reverse === str) {
+                document.getElementById("yup").innerText = "Yes, it is a Palindrome ✅";
+                document.getElementById("yup").style.color = "#22C55E";
+                box.style.backgroundColor = "rgba(34,197,94,0.3)";
+            } else {
+                document.getElementById("yup").innerText = "No, it is NOT ❌";
+                document.getElementById("yup").style.color = "#EF4444";
+                box.style.backgroundColor = "rgba(239,68,68,0.3)";
+            }
 
-            
+
         }
 
     </script>
 </body>
+
 </html>
